@@ -1,0 +1,10 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "travel_planner": "./src/travel_planner/graph.py:graph",
+    "destination_recommender": "./src/destanation_recommender/destanation.py:destanation",
+    "agent_user": "./src/agent_user/agent_user.py:agent_user"
+  },
+  "env": ".env",
+  "image_distro": "wolfi"
+}
