@@ -1,4 +1,4 @@
-from typing import Optional, TypedDict, Any, List
+from typing import Optional, TypedDict, Any, List, Weather
 from src.utils.models import (
     UserPreferences,
     Destination,
@@ -17,3 +17,4 @@ class MainState(TypedDict):
     destination: Optional[Destination]
     informed_destination: Optional[InformedDestination]
     location_scores: Optional[LocationScores]
+    weather: Optional[Weather]

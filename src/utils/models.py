@@ -13,7 +13,7 @@ class UserPreferences(BaseModel):
     budget: float = Field(..., description="User's budget for the trip in dollars USA")
     travel_dates: str = Field(
         ...,
-        description="Preferred travel dates(in format 'MM.DD-MM.DD')",
+        description="Preferred travel dates(in format 'YYYY-MM-DDtoYYYY-MM-DD')",
     )
 
 
@@ -61,4 +61,10 @@ class LocationScores(BaseModel):
     scores: List[LocationScore] = Field(
         ...,
         description="List of scores from 0 to 100 indicating the suitability of the location",
+    )
+
+class Weather(BaseModel):
+    temperature: List[float] = Field(
+        ...,
+        description="List of average temperature in given location for every day in celsium."
     )
