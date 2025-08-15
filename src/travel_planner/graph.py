@@ -16,6 +16,7 @@ from src.utils.state import MainState, InputState
 from src.agent_user.agent_user import agent_user
 from src.destanation_recommender.destanation import destanation
 from src.scorer.scorer import scorer
+from src.weather.weather import weather
 
 # Define the graph
 graph = (
@@ -23,6 +24,7 @@ graph = (
     .add_node("agent_user", agent_user)
     .add_node("destination_recommender", destanation)
     .add_node("scorer", scorer)
+    .add_node("weather", weather)
     .add_edge("__start__", "agent_user")
     .add_edge("agent_user", "destination_recommender")
     .add_edge("destination_recommender", "scorer")
@@ -30,10 +32,11 @@ graph = (
         "scorer",
         good_score,
         {
-            "continue": "__end__",
+            "continue": "weather",
             "return": "destination_recommender",
         },
     )
-    .add_edge("scorer", "__end__")
+    .add_edge("scorer", "weather")
+    .add_edge("weather", "__end__")
     .compile(name="New Graph")
 )

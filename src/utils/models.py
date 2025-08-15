@@ -63,8 +63,28 @@ class LocationScores(BaseModel):
         description="List of scores from 0 to 100 indicating the suitability of the location",
     )
 
-class Weather(BaseModel):
+class WeatherPerLocation(BaseModel):
+    location: str =  Field(..., description="Location in format (City, Country)")
     temperature: List[float] = Field(
         ...,
-        description="List of average temperature in given location for every day in celsium."
+        description="List of average temperature in given location for every day in celsium. Length must match time in the trip"
+    )
+    feel_like_temperature: List[float] = Field(
+        ...,
+        description="List of average feels like temperature in given location for every day in celsium.Length must match time in the trip"
+    )
+    condition: List[str] = Field(
+        ...,
+        description="List of condition in given location for every day.Length must match time in the trip"
+    )
+    humidity: List[str] = Field(
+        ..., 
+        description="List of humidity in given location for every day.Length must match time in the trip"
+    )
+
+
+class Weather(BaseModel):
+    weather_per_locations: List[WeatherPerLocation] = Field(
+        ...,
+        description="List of all weather information in location"
     )

@@ -1,9 +1,10 @@
-from typing import Optional, TypedDict, Any, List, Weather
+from typing import Optional, TypedDict, Any, List
 from src.utils.models import (
     UserPreferences,
     Destination,
     InformedDestination,
     LocationScores,
+    Weather
 )
 
 
