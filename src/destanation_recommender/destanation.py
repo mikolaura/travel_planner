@@ -50,9 +50,9 @@ def search_web_and_tell_why_this_location(state: MainState) -> MainState:
                                   {",".join(locations)}
                                   Visa requirements:
                                   {",".join([str(visa) for visa in needing_visa])}
-                                  If you want to perform search please use this question:
+                                   you need to perform search using this question:
                                   {"? ".join( questions)}.
-                                  You also would need to create reasons for each location, please use answers from the web search, but you dont have too. And yes you can create from your database. If you dont have information about question, just tell some good reasons.
+                                  You also would need to create reasons for each location, please use answers from the web search. And yes you can create from your database. If you dont have any information about question.
                                   
                                   """,
     }

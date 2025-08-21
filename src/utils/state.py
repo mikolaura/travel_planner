@@ -4,7 +4,8 @@ from src.utils.models import (
     Destination,
     InformedDestination,
     LocationScores,
-    Weather
+    Weather,
+    Output,
 )
 
 
@@ -19,3 +20,4 @@ class MainState(TypedDict):
     informed_destination: Optional[InformedDestination]
     location_scores: Optional[LocationScores]
     weather: Optional[Weather]
+    output: Optional[Output] = None
